@@ -16,12 +16,6 @@ struct Edge // Согласно заданию
     Edge(int x, int y) : v1(x), v2(y) {}
 };
 
-struct WeightEdge : Edge // добавляем вес
-{
-    double w;
-    WeightEdge(int x, int y, double _w) : Edge (x, y), w(_w) {}
-};
-
 std::ostream & operator<<(std::ostream &s, const Edge &e);
 
 struct Vertex
