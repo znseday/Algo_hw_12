@@ -52,6 +52,17 @@ bool FindShortest::LoadFromFile(const string &fn)
 }
 //---------------------------------------------------------
 
+void FindShortest::ResetDistances()
+{
+    for (auto &v : Vertices)
+    {
+        v.Dist = std::numeric_limits<double>::infinity();
+        v.From = -1;
+        v.Visited = false;
+    }
+}
+//---------------------------------------------------------
+
 int FindShortest::FindMin()
 {
     if (Vertices.empty())
@@ -78,6 +89,8 @@ int FindShortest::FindMin()
 vector<Edge> FindShortest::FindShortestFromTo(size_t _fromV, size_t _toV)
 {
     vector<Edge> res; // возвращаем массив ребер согласно заданию
+
+    ResetDistances();
 
     Vertices[_fromV].Dist = 0;
 

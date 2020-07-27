@@ -35,6 +35,8 @@ protected:
 
     std::vector<Vertex> Vertices;
 
+    void ResetDistances();
+
     int FindMin();
 
 public:
